@@ -1,0 +1,5 @@
+name: joinquit
+version: "1.0.0-SNAPSHOT"
+author: ogiwara
+api: ["1.0.0"]
+main: me.ogiwara.joinquit.joinquit
