@@ -1,62 +1,34 @@
 package me.ogiwara.Disabler; 
 
-import cn.nukkit.Player; 
-import cn.nukkit.event.EventHandler; 
+import cn.nukkit.command.Command;
+import cn.nukkit.command.CommandSender;
+
 import cn.nukkit.event.Listener; 
-import cn.nukkit.event.player.PlayerJoinEvent;
-import cn.nukkit.event.player.PlayerQuitEvent;
 import cn.nukkit.plugin.PluginBase;
-import cn.nukkit.utils.Config;
+import cn.nukkit.utils.PluginException;
 
-public class joinquit extends PluginBase implements Listener{
+public class Disabler extends PluginBase implements Listener{
 	
-	public void onEnable(){
+	public boolean onCommand(final CommandSender sender, Command command, String label, String[] args){
+		switch(command.getName()){
+			case "disable":
+			try{
+				if(args[0] != null){
+				}
+			}catch(ArrayIndexOutOfBoundsException e){
+				sender.sendMessage("Please enter plugin name.");
+				return false;
+			}
 
-		this.getServer().getPluginManager().registerEvents(this, this); 
-		getDataFolder().mkdir(); 
- 
-		Config config = new Config( 
-		new File(this.getDataFolder(), "config.yml"),Config.YAML, 
-		new LinkedHashMap<String, Object>() { 
-						{ 
-							put("opjoin", "§cServer op @p joined"); 
-							put("opquit", "§cSrever op @p quit"); 
-							put("non-opjoin", "§e@p joined"); 
-							put("non-opquit", "§e@p quit"); 
-						} 
-					}); 
-		config.save(); 
-		
-		this.getServer().getLogger().info("joinquit Loaded");
-	}
-	
-	@EventHandler
-	public void join(PlayerJoinEvent event){
-		event.setJoinMessage("");
-		Player player = event.getPlayer();
-			if(player.isOp()){
-				String joinmes = getConfig().get("opjoin").toString();//sucsess ! toString() is required.
-				joinmes = joinmes.replaceAll("@p",player.getName());
-				this.getServer().broadcastMessage(joinmes);
-			}else{
-				String joinmes = getConfig().get("non-opjoin").toString();
-				joinmes = joinmes.replaceAll("@p",player.getName());
-				this.getServer().broadcastMessage(joinmes);
+			try{
+				this.getServer().getPluginManager().disablePlugin(this.getServer().getPluginManager().getPlugin(args[0]));
+				sender.sendMessage("Disabling "+ args[0] +" ...");
+			}catch(NullPointerException e){
+				sender.sendMessage("Plugin name : '"+ args[0] + "' does not exists.");
+				return false;
 			}
-	}
-	
-	@EventHandler
-	public void quit(PlayerQuitEvent event){
-		event.setQuitMessage("");
-		Player player = event.getPlayer();
-			if(player.isOp()){
-				String quitmes = getConfig().get("opquit").toString();
-				quitmes = quitmes.replaceAll("@p",player.getName());
-				this.getServer().broadcastMessage(quitmes);
-			}else{
-				String quitmes = getConfig().get("non-opquit").toString();
-				quitmes = quitmes.replaceAll("@p",player.getName());
-				this.getServer().broadcastMessage(quitmes);				
-			}
+			return true;
+		}
+		return false;
 	}
 }

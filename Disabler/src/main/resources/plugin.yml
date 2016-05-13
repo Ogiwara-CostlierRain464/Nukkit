@@ -1,14 +1,14 @@
 name: Disabler
-version: "Disabler"
+version: "1.0"
 author: ogiwara
 api: ["1.0.0"]
 main: me.ogiwara.Disabler.Disabler
 description: Disable spesific plugin with command.
 commands:
  disable:
-  aliases: [dis,exit]
+  aliases: [dis]
   description: "Disable command."
-  usage: "/disable or dis or exit <name> to diable spesific plugin."
+  usage: "/disable <name> to diable specific plugin.(aliases /dis)"
   permission: "disable.command"
  permissions:
   disable.command:
