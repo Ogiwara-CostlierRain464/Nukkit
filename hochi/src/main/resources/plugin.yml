@@ -1,0 +1,11 @@
+main: me.ogiwara.hochi.hochi
+name: hochi
+version: "1.0"
+api: ["1.0.0"]
+auther: ogiwara
+description: Add sleep mode.
+commands:
+ hochi:
+  aliases: [ho,sleep]
+  description: "sleep mode"
+  usage: /hochi to start sleep mode.(aliases /sleep,/ho)
