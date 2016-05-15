@@ -86,7 +86,6 @@ public class hochi extends PluginBase implements Listener{
 			if(hochi.containsKey(name)){
 				event.setCancelled();
 				player.sendTip("§a>>/hochi to unlock this.");
-				player.sendPopup("§a>>/hochi to unlock this.");
 			} 
 	}
 	

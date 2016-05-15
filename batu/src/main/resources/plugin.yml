@@ -1,0 +1,6 @@
+name: batu
+version: "1.0"
+author: ogiwara
+api: ["1.0.0"]
+main: me.ogiwara.batu.batu
+description: Lock player.
