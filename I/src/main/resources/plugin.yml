@@ -1,0 +1,14 @@
+main: me.ogiwara.I.I
+name: I
+version: "1.0"
+api: ["1.0.0"]
+auther: ogiwara
+description: Check player info with command(PMDataBase required)
+commands:
+ i:
+  description: "check player info"
+  usage: /i <name>
+  permission: "i.command"
+ permissions:
+  i.command:
+   default: op

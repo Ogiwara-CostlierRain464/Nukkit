@@ -4,7 +4,7 @@
   <groupId>me.ogiwara</groupId>
   <artifactId>PMDataBase</artifactId>
   <name>PMDataBase</name>
-  <version>1.0.</version>
+  <version>1.0</version>
   <url>https://github.com/Ogiwara-CostlierRain464</url>
   <build>
     <plugins>

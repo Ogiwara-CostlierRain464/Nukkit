@@ -41,6 +41,10 @@ public class joinquit extends PluginBase implements Listener{
 				String joinmes = getConfig().get("opjoin").toString();//sucsess ! toString() is required.
 				joinmes = joinmes.replaceAll("@p",player.getName());
 				this.getServer().broadcastMessage(joinmes);
+				Player players = this.getServer().getOnlinePlayers();
+				
+				player.sendTip("tips");
+				player.sendPopup("popup");
 			}else{
 				String joinmes = getConfig().get("non-opjoin").toString();
 				joinmes = joinmes.replaceAll("@p",player.getName());
