@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>me.ogiwara</groupId>
-  <artifactId>GUIHandler</artifactId>
+  <artifactId>MSGEConnecter</artifactId>
   <version>1.0</version>
   <packaging>jar</packaging>
 
@@ -14,7 +14,7 @@
   	</repository>
   </repositories>
 
-  <name>GUIHandler</name>
+  <name>MSGEConnecter</name>
   <url>https://github.com/Ogiwara-CostlierRain464</url>
 
   <properties>

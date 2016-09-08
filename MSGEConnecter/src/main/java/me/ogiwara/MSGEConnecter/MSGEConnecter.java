@@ -1,4 +1,4 @@
-package me.ogiwara.GUIHandler;
+package me.ogiwara.MSGEConnecter;
 
 import cn.nukkit.Player;
 import cn.nukkit.event.EventHandler; 
@@ -20,11 +20,12 @@ import java.io.File;
 import cn.nukkit.event.player.PlayerJoinEvent;
 import cn.nukkit.event.player.PlayerQuitEvent;
 import cn.nukkit.event.player.PlayerKickEvent;
+import cn.nukkit.event.player.PlayerChatEvent;
 import cn.nukkit.event.player.PlayerCommandPreprocessEvent;
 import cn.nukkit.event.player.PlayerPreLoginEvent;
 import cn.nukkit.event.server.ServerCommandEvent;
 
-public class GUIHandler extends PluginBase implements Listener{
+public class MSGEConnecter extends PluginBase implements Listener{
 	
 	final public String ADDPLAYER = "<AP>";
 	
@@ -81,9 +82,24 @@ public class GUIHandler extends PluginBase implements Listener{
 	}
 	
 	@EventHandler
+	public void onPlayerChat(PlayerChatEvent event){
+		String command = event.getMessage();
+		
+		if(HasGUITag(command)){
+			event.setCancelled();
+			event.getPlayer().sendMessage("§c[MSGE] Don't use GUI Tag in chat.");
+		}
+	}
+	
+	@EventHandler
 	public void onPreCommand(PlayerCommandPreprocessEvent event){
 		
 		String command = event.getMessage();
+		
+		if(HasGUITag(command)){
+			event.setCancelled();
+			event.getPlayer().sendMessage("§c[MSGE] Don't use GUI Tag in chat.");
+		}
 		
 		if(this.IsBanCommand(command)){
 			this.AddBanPlayers(this.GetArg(command));
@@ -94,7 +110,7 @@ public class GUIHandler extends PluginBase implements Listener{
 	public void onServerCommand(ServerCommandEvent event){
 		
 		String command = event.getCommand();
-		
+	
 		if(this.IsBanCommand(command)){
 			this.AddBanPlayers(this.GetArg(command));
 		}
@@ -113,6 +129,14 @@ public class GUIHandler extends PluginBase implements Listener{
 			this.DB.close();
 		}catch(SQLException e){
 			this.getLogger().info(e.getMessage());
+		}
+	}
+	
+	private boolean HasGUITag(String message){
+		if(message.contains("<GUI>") || message.contains("</GUI>")){
+			return true;
+		}else{
+			return false;
 		}
 	}
 	
