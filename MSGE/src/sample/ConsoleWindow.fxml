@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ConsoleWindowControll">
+    <children>
+        <Pane prefHeight="750.0" prefWidth="1000.0">
+            <children>
+                <Line endX="900.0" layoutX="101.0" layoutY="80.0" startX="-100.0" />
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="41.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/run.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="99.0" layoutY="34.0" text="コンソール" />
+            <ListView fx:id="ConsoleListView" layoutX="53.0" layoutY="110.0" prefHeight="513.0" prefWidth="641.0" />
+            <TextField fx:id="CommandTextField" layoutX="51.0" layoutY="676.0" onKeyPressed="#onKeyPress" prefHeight="39.0" prefWidth="344.0" />
+            <Label layoutX="51.0" layoutY="642.0" text="コマンド" />
+            <TabPane layoutX="709.0" layoutY="110.0" prefHeight="513.0" prefWidth="272.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="プレイヤーリスト">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="PlayerListView" layoutX="14.0" layoutY="14.0" prefHeight="341.0" prefWidth="248.0" />
+                              <Button fx:id="BanButton" layoutX="14.0" layoutY="378.0" mnemonicParsing="false" onMouseClicked="#onBanButtonClick" text="ban" />
+                              <Button fx:id="LockButton" layoutX="96.0" layoutY="378.0" mnemonicParsing="false" onMouseClicked="#onLockButtonClick" text="lock" />
+                              <Button fx:id="kickButton" layoutX="184.0" layoutY="378.0" mnemonicParsing="false" onMouseClicked="#onKickButtonClick" text="kick" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="通知">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="NotificationListView" layoutX="14.0" layoutY="14.0" prefHeight="373.0" prefWidth="248.0" />
+                              <Button layoutX="81.0" layoutY="395.0" mnemonicParsing="false" onMouseClicked="#onClearNotificationButtonClick" text="通知をクリア" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            <Button layoutX="423.0" layoutY="676.0" mnemonicParsing="false" onMouseClicked="#onExecuteButtonClick" text="実行" />
+            <CheckBox fx:id="RestartCheckBox" layoutX="709.0" layoutY="642.0" mnemonicParsing="false" selected="true" text="サーバーを自動で再起動する" />
+            <Label layoutX="709.0" layoutY="676.0" text="ASR等自動再起動プラグインを使用" />
+            <Label layoutX="709.0" layoutY="702.0" text="している場合は、これをチェック" />
+            <Label layoutX="423.0" layoutY="719.0" text="またはEnterキーでコマンド実行">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="554.0" layoutY="676.0" onMouseClicked="#onGarbageImageViewClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/garbage.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="603.0" layoutY="682.0" text="ログ削除" />
+            </children></Pane>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+</GridPane>

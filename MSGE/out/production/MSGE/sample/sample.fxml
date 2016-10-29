@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Pane fx:id="DashBoardWindow" prefHeight="750.0" prefWidth="1000.0">
+         <children>
+            <Line endX="910.0" layoutX="95.0" layoutY="108.0" startX="-100.0" />
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="47.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Home.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="120.0" layoutY="37.0" text="ダッシュボード">
+               <font>
+                  <Font size="42.0" />
+               </font>
+            </Label>
+            <Label layoutX="48.0" layoutY="158.0" text="ServerName">
+               <font>
+                  <Font size="22.0" />
+               </font></Label>
+            <Label fx:id="ServerNameLabel" layoutX="40.0" layoutY="187.0" text="PocketMine-Server">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </Label>
+            <Label layoutX="47.0" layoutY="265.0" text="Port :">
+               <font>
+                  <Font size="22.0" />
+               </font></Label>
+            <Label fx:id="ServerPortLabel" layoutX="107.0" layoutY="265.0" text="19132">
+               <font>
+                  <Font size="22.0" />
+               </font></Label>
+            <Label layoutX="670.0" layoutY="160.0" text="PluginList" />
+            <ListView fx:id="PluginListView" layoutX="670.0" layoutY="216.0" prefHeight="295.0" prefWidth="288.0" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="746.0" layoutY="556.0" onMouseClicked="#onStartButtonClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/run.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="849.0" layoutY="593.0" text="起動!" />
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="489.0" layoutY="262.0" onMouseClicked="#onSettingButtonClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/setting.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="549.0" layoutY="279.0" text="設定" />
+            <Label layoutX="920.0" layoutY="77.0" text="クレジット" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="870.0" layoutY="62.0" onMouseClicked="#onCreditClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/info.png" />
+               </image></ImageView>
+            <LineChart fx:id="PlayerLineChart" layoutX="52.0" layoutY="322.0" prefHeight="400.0" prefWidth="563.0" title="プレイヤーの分析">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+         </children></Pane>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>

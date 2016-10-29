@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SettingWindowControll">
+    <children>
+        <Pane fx:id="SettingWindow" prefHeight="600.0" prefWidth="800.0">
+            <children>
+                <Line endX="700.0" layoutX="101.0" layoutY="109.0" startX="-100.0" />
+                <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="36.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/setting.png" />
+                    </image>
+                </ImageView>
+            <Label layoutX="96.0" layoutY="47.0" text="設定">
+               <font>
+                  <Font size="25.0" />
+               </font></Label>
+            <Label layoutX="36.0" layoutY="143.0" text="デフォルトコマンド&gt;">
+               <font>
+                  <Font size="22.0" />
+               </font></Label>
+            <Label layoutX="36.0" layoutY="181.0" text="プレイヤーに対して、素早くコマンドを実行できます" />
+            <Label layoutX="36.0" layoutY="208.0" text="プレイヤーリストや通知で使用できます" />
+            <Label layoutX="36.0" layoutY="255.0" text="プレイヤーバンコマンド" />
+            <TextField fx:id="PlayerBanCommandTextField" layoutX="39.0" layoutY="281.0" />
+            <Label layoutX="39.0" layoutY="336.0" text="プレイヤーロックコマンド" />
+            <TextField fx:id="PlayerLockCommandTextField" layoutX="39.0" layoutY="363.0" />
+            <Label layoutX="39.0" layoutY="437.0" text="サーバーの設定&gt;">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="36.0" layoutY="478.0" text="server.propertiesファイルの設定ができます" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="36.0" layoutY="529.0" onMouseClicked="#onServerPropertiesClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/info.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="86.0" layoutY="536.0" text="サーバーの設定" />
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="594.0" layoutY="499.0" onMouseClicked="#onOKClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Check.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="661.0" layoutY="516.0" text="完了" />
+            <Label layoutX="400.0" layoutY="143.0" text="リモートビュー&gt;">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="400.0" layoutY="181.0" text="MSGE Android アプリケーションを使う事によって、" />
+            <Label layoutX="400.0" layoutY="208.0" text="コンソールを監視できます" />
+            <Label layoutX="401.0" layoutY="255.0" text="使用するポート" />
+            <TextField fx:id="RemoteViewPortTextField" layoutX="400.0" layoutY="281.0" />
+            <Label layoutX="561.0" layoutY="261.0" text="*このポートを開放する必要があります(UDP)">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="401.0" layoutY="336.0" text="パスワード" />
+            <TextField fx:id="RemoteViewPasswordTextField" layoutX="401.0" layoutY="363.0" />
+            </children></Pane>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+</GridPane>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.serverpropertiesWindowControll">
+    <children>
+        <Pane fx:id="serverpropertiesWindow" prefHeight="600.0" prefWidth="700.0">
+            <children>
+                <Line endX="700.0" layoutX="101.0" layoutY="109.0" startX="-100.0" />
+                <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="36.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/info.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="116.0" layoutY="47.0" text="サーバーの設定">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                </Label>
+            <Label layoutX="45.0" layoutY="134.0" text="設定したい項目を選択して下さい">
+               <font>
+                  <Font size="22.0" />
+               </font></Label>
+            <ListView fx:id="serverpropertiesListView" layoutX="36.0" layoutY="189.0" onMouseClicked="#onListClick" prefHeight="351.0" prefWidth="358.0" />
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="533.0" layoutY="481.0" onMouseClicked="#onOKClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Check.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="602.0" layoutY="497.0" text="完了" />
+            <Label fx:id="KeyLabel" layoutX="401.0" layoutY="222.0" text="Key :" />
+            <TextField fx:id="ValueTextField" layoutX="476.0" layoutY="216.0" onKeyReleased="#onValueTextFieldChange" prefHeight="39.0" prefWidth="169.0" />
+            </children></Pane>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+</GridPane>

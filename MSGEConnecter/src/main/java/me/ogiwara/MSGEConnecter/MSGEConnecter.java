@@ -164,7 +164,7 @@ public class MSGEConnecter extends PluginBase implements Listener{
 	public void AddNewPlayers(Player player){
 		String lowname = player.getName().toLowerCase();
 		
-		File file = new File(this.getServer().getDataPath() + "players/" + lowname + ".dat");
+		File file = new File(this.getServer().getDataPath() + "players" + File.separator + lowname + ".dat");
 		
 		if(!file.exists()){
 			this.NewPlayers.add(lowname);
@@ -229,6 +229,6 @@ public class MSGEConnecter extends PluginBase implements Listener{
 	}
 	
 	public void ConnectDB() throws SQLException { 
-			this.DB = DriverManager.getConnection("jdbc:sqlite:"+getDataFolder()+"/" + "ServerInfo.db");
+			this.DB = DriverManager.getConnection("jdbc:sqlite:"+getDataFolder()+ File.separator + "ServerInfo.db");
 	}
 }

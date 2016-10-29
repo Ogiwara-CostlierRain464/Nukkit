@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MSGE:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MSGE_jar</output-path>
+    <root id="archive" name="MSGE.jar">
+      <element id="module-output" name="MSGE" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/sqlite-jdbc-3.8.11.2.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
